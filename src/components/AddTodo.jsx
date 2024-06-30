@@ -42,7 +42,7 @@ export const AddTodo = () => {
                 return (
                     <li className="item" key={todo.id} ref={(el) => (ref.current[index] = el)}>
                         <div className="leftSide">
-                            <button onClick={() => handleCompleted(todo.id)}>{todo.completed ? "✅" : "🟩"} </button>
+                            <button className="completedBtn" onClick={() => handleCompleted(todo.id)}>{todo.completed ? "✅" : "🟩"} </button>
                             {todo.isEdited 
                                 ? 
                                     (<div>
@@ -50,11 +50,11 @@ export const AddTodo = () => {
                                     </div>
                                     ) 
                                 : 
-                                    todo.completed ? <del>{todo.todo}</del> : <p>{todo.todo}</p>}
+                                    todo.completed ? <del className="todoTitle">{todo.todo}</del> : <p className="todoTitle">{todo.todo}</p>}
                         </div>
                         <div className="editDeletebtn">
-                            <button onClick={() => handleEditBtn(todo.id, todo.todo)}>🔄️</button>
-                            <button onClick={() => handleDeleteBtn(todo.id)}>🗑️</button>
+                            <button className="editBtn" onClick={() => handleEditBtn(todo.id, todo.todo)}>🔄️</button>
+                            <button className="deleteBtn" onClick={() => handleDeleteBtn(todo.id)}>🗑️</button>
                         </div>
                         
 

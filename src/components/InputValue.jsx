@@ -4,7 +4,7 @@ import { UseTodoValues } from "../store/context";
 export const InputValue = () => {
     const {todos, setTodos} = UseTodoValues();
     const [inputValue, setInputValue] = useState("");
-    
+
     let i = 1;
     const changeId = () => {
       todos.forEach(todo => {
@@ -35,7 +35,7 @@ export const InputValue = () => {
       <>
       <form onSubmit={(e) => handleForm(e)}>
         <input type="text" name='todo' value={inputValue} onChange={(e) => setInputValue(e.target.value)}/>
-        <button type='submit' className='addBtn' >ekle</button>
+        <button type='submit' className='addBtn' >EKLE</button>
       </form>
       </>
     )

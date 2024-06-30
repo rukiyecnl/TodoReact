@@ -46,7 +46,7 @@ export const AddTodo = () => {
                             {todo.isEdited 
                                 ? 
                                     (<div>
-                                        <input value={newTodoTitle} type="text" onChange={(e) => setNewTodoTitle(e.target.value)}/>
+                                        <input className="updateInput" value={newTodoTitle} type="text" onChange={(e) => setNewTodoTitle(e.target.value)}/>
                                     </div>
                                     ) 
                                 : 

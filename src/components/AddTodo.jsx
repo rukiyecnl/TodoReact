@@ -40,19 +40,23 @@ export const AddTodo = () => {
         <ul>
             {todos.map((todo, index) => {
                 return (
-                    <li key={todo.id} ref={(el) => (ref.current[index] = el)}>
-                        <button onClick={() => handleCompleted(todo.id)}>{todo.completed ? "✅" : "🟩"} </button>
-                        {todo.isEdited 
-                            ? 
-                                (<div>
-                                    <input value={newTodoTitle} type="text" onChange={(e) => setNewTodoTitle(e.target.value)}/>
-                                </div>
-                                 ) 
-                            : 
-                                todo.completed ? <del>{todo.todo}</del> : <p>{todo.todo}</p>}
+                    <li className="item" key={todo.id} ref={(el) => (ref.current[index] = el)}>
+                        <div className="leftSide">
+                            <button onClick={() => handleCompleted(todo.id)}>{todo.completed ? "✅" : "🟩"} </button>
+                            {todo.isEdited 
+                                ? 
+                                    (<div>
+                                        <input value={newTodoTitle} type="text" onChange={(e) => setNewTodoTitle(e.target.value)}/>
+                                    </div>
+                                    ) 
+                                : 
+                                    todo.completed ? <del>{todo.todo}</del> : <p>{todo.todo}</p>}
+                        </div>
+                        <div className="editDeletebtn">
+                            <button onClick={() => handleEditBtn(todo.id, todo.todo)}>🔄️</button>
+                            <button onClick={() => handleDeleteBtn(todo.id)}>🗑️</button>
+                        </div>
                         
-                        <button onClick={() => handleEditBtn(todo.id, todo.todo)}>🔄️</button>
-                        <button onClick={() => handleDeleteBtn(todo.id)}>🗑️</button>
 
                         
                     </li>

@@ -1,7 +1,7 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  /* padding: 2rem; */
   text-align: center;
 }
 li {
@@ -95,4 +95,90 @@ form {
   background-color: transparent;
   border: none;
   font-size: 25px;
+}
+
+@media (width < 768px) {
+  .container {
+    padding-inline: 0px;
+  }
+  
+  header {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-size: 40px;
+    & > img {
+      width: 170px;
+      height: 170px;
+      border-radius: 10px;
+    }
+    & > h1 {
+      margin-block: 30px;
+    }
+  }
+  
+  form {
+    & > input {
+      font-size: 17px;
+      color: white;
+      background-color:  rgba(243, 140, 205, 0.82);
+      border: none;
+      padding: 8px;
+      width: 60%;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px ;
+    }
+  
+    & > button {
+      border: none;
+      font-size: 17px;
+      font-weight: 600;
+      background-color: white;
+      color:  rgba(243, 140, 205, 0.82);
+      padding: 8px;
+      padding-inline: 15px;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px ;
+    }
+  
+    
+  }
+  
+  .item {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 20px;
+  }
+  
+  .leftSide {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .todoTitle, .updateInput {
+    font-size: 20px;
+    font-weight: 600;
+    color: rgba(43, 2, 28, 0.82);
+    letter-spacing: 1.5px;
+    word-spacing: 1.5px;
+  }
+  
+  .updateInput {
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  .completedBtn, .deleteBtn, .editBtn {
+    background-color: transparent;
+    border: none;
+    font-size: 25px;
+  }
+  
 }
